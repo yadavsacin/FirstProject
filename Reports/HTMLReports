@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Cucumber</title>
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<style>
+.cucumber-react .cucumber-status--passed {
+  color: #2CB14A;
+}
+.cucumber-react .cucumber-status--skipped {
+  color: #00A0CC;
+}
+.cucumber-react .cucumber-status--pending {
+  color: #FFAD33;
+}
+.cucumber-react .cucumber-status--undefined {
+  color: #FFAD33;
+}
+.cucumber-react .cucumber-status--ambiguous {
+  color: #F4EBFD;
+}
+.cucumber-react .cucumber-status--failed {
+  color: #BB0000;
+}
+.cucumber-react .cucumber-status--unknown {
+  color: #B6BECB;
+}
+.cucumber-react h1, .cucumber-react h2, .cucumber-react h3 {
+  padding: 0;
+  margin: 0;
+}
+.cucumber-react a {
+  color: inherit;
+}
+.cucumber-react .gherkin-document-list {
+  font: 14px "Open Sans", sans-serif;
+  color: #161C24;
+  background: #fff;
+  overflow-x: hidden;
+}
+.cucumber-react .cucumber-title {
+  margin-top: 0.3em;
+  margin-bottom: 0;
+  display: inline-block;
+}
+.cucumber-react .cucumber-title__keyword {
+  font-weight: bold;
+}
+.cucumber-react .cucumber-title__text {
+  font-weight: normal;
+}
+.cucumber-react .cucumber-tags {
+  padding: 0;
+  margin-bottom: 0;
+}
+.cucumber-react .cucumber-tags .cucumber-tag {
+  display: inline;
+  list-style-type: none;
+  padding: 4px 8px 4px 8px;
+  margin-right: 6px;
+  background-color: #FFFFFF;
+  border-radius: 6px;
+}
+.cucumber-react .cucumber-feature__icon {
+  padding-top: 0.35em;
+  padding-right: 0.5em;
+}
+.cucumber-react .cucumber-description,
+.cucumber-react .cucumber-children {
+  margin-left: 1em;
+}
+.cucumber-react .cucumber-feature,
+.cucumber-react .cucumber-rule,
+.cucumber-react .cucumber-scenario,
+.cucumber-react .cucumber-background {
+  margin-bottom: 1em;
+}
+.cucumber-react .cucumber-steps {
+  list-style-type: none;
+  padding-left: 10px;
+}
+.cucumber-react .cucumber-steps .cucumber-step {
+  display: flex;
+}
+.cucumber-react .cucumber-steps .cucumber-step__status {
+  padding-top: 0.2em;
+  padding-right: 0.5em;
+}
+.cucumber-react .cucumber-steps .cucumber-step__content {
+  flex-grow: 1;
+}
+.cucumber-react .cucumber-steps .cucumber-step__keyword {
+  font-weight: bold;
+}
+.cucumber-react .cucumber-steps .cucumber-step__text {
+  font-weight: normal;
+}
+.cucumber-react .cucumber-steps .cucumber-step__param {
+  font-weight: normal;
+  font-style: italic;
+}
+.cucumber-react .cucumber-table {
+  border-collapse: collapse;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+.cucumber-react .cucumber-table__header-cell {
+  border: 1px solid #4B5662;
+  padding: 0.3em;
+}
+.cucumber-react .cucumber-table__cell {
+  border: 1px solid #4B5662;
+  padding: 0.3em;
+}
+.cucumber-react .cucumber-table__cell__status {
+  padding: 0.5em 3px 3px 3px;
+}
+.cucumber-react .cucumber-table__cell__step {
+  flex-grow: 1;
+}
+.cucumber-react .cucumber-code {
+  padding: 0.25em;
+  background-color: #ebebeb;
+}
+.cucumber-react .cucumber-error {
+  padding: 0.5em;
+  margin: 0;
+  overflow: scroll;
+}
+.cucumber-react .cucumber-no-documents {
+  font: 14px "Open Sans", sans-serif;
+}
+.cucumber-react .cucumber-attachment {
+  background-color: #ebebeb;
+  padding: 0.5em;
+}
+.cucumber-react .cucumber-attachment__icon {
+  margin-right: 0.5em;
+}
+.cucumber-react .cucumber-attachment__image {
+  margin-top: 1em;
+}
+.cucumber-react .cucumber-anchor {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 0.3em;
+}
+.cucumber-react .cucumber-anchor__link {
+  opacity: 0;
+  transition: all 0.35s ease-in-out;
+  position: absolute;
+  left: -20px;
+  display: flex;
+  align-items: center;
+}
+.cucumber-react .cucumber-anchor__icon {
+  margin-right: 0.5em;
+}
+.cucumber-react .cucumber-anchor:hover a {
+  opacity: 1;
+  width: max-content;
+  transition: all 0.35s ease-in-out;
+}
+.cucumber-react .cucumber-anchor > * {
+  height: 100%;
+  margin-top: 0px;
+}
+
+.cucumber-report-header {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font: 11px "Open Sans", sans-serif;
+  margin-bottom: 1em;
+}
+.cucumber-report-header > * {
+  padding: 1em;
+}
+.cucumber-report-header .cucumber-status-filter {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.cucumber-report-header .cucumber-status-filter table {
+  width: 100%;
+}
+.cucumber-report-header .cucumber-execution-data {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.cucumber-report-header .cucumber-search-bar {
+  border-right: 0;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 9fr 1fr;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search input {
+  padding: 0.4em;
+  border-radius: 0;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search button {
+  height: 2.2em;
+  padding-left: 0.6em;
+  padding-right: 0.6em;
+}
+.cucumber-report-header .cucumber-search-bar p.help {
+  font-size: 80%;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul {
+  display: inline;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li {
+  list-style-type: none;
+  display: inline-block;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li input {
+  display: inline-block;
+  width: auto;
+  height: 0.6em;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li label {
+  padding-right: 1em;
+}
+
+@media only screen and (min-width: 600px) {
+  .cucumber-report-header {
+    grid-template-columns: 1fr 1fr;
+  }
+  .cucumber-report-header .cucumber-status-filter {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .cucumber-report-header .cucumber-search-bar {
+    grid-column: 1/-1;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .cucumber-report-header {
+    grid-template-columns: 1fr 1fr 2fr;
+  }
+  .cucumber-report-header .cucumber-status-filter {
+    border-bottom: 0;
+  }
+  .cucumber-report-header .cucumber-execution-data {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 0;
+  }
+  .cucumber-report-header .cucumber-search-bar {
+    grid-column: auto;
+  }
+}
+.accordion {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+}
+
+.accordion__item + .accordion__item {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.accordion__button {
+    background-color: #f4f4f4;
+    color: #444;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    border: none;
+}
+
+.accordion__button:hover {
+    background-color: #ddd;
+}
+
+.accordion__button:before {
+    display: inline-block;
+    content: '';
+    height: 10px;
+    width: 10px;
+    margin-right: 12px;
+    border-bottom: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+    transform: rotate(-45deg);
+}
+
+.accordion__button[aria-expanded='true']::before,
+.accordion__button[aria-selected='true']::before {
+    transform: rotate(45deg);
+}
+
+.accordion__panel {
+    padding: 20px;
+    animation: fadein 0.35s ease-in;
+}
+
+	</style>
+</head>
+<body>
+<div id="content">
+</div>
+<script>
+window.CUCUMBER_MESSAGES = [{"meta":{"protocolVersion":"13.1.0","implementation":{"name":"cucumber-jvm","version":"6.8.0"},"runtime":{"name":"OpenJDK 64-Bit Server VM","version":"17.0.1+12"},"os":{"name":"Windows 10"},"cpu":{"name":"amd64"}}},{"testRunStarted":{"timestamp":{"seconds":"1650473017","nanos":620273700}}},{"source":{"uri":"file:///C:/Users/Yadav/eclipse-workspace/CucummberProject/src/test/resources/Features/DataTable.feature","data":"Feature: Test the login funcationality of OrangeHRM using DataTable\r\n\r\nScenario Outline: Test the valid login\r\n\r\n#Given user is on login page\r\n#When user enters  \"sachin yadav\"  and \"Papa@1234\"\r\n#And click on login buttom\r\n#Then user should land on home page\r\n\r\nGiven user is on login page using DataTable\r\nWhen user enters  credentails using DataTable \r\n|sachin yadav|Papa@1234|\r\nAnd click on login buttom\r\nThen user should land on home page\r\n\r\n","mediaType":"text/x.cucumber.gherkin+plain"}},{"gherkinDocument":{"uri":"file:///C:/Users/Yadav/eclipse-workspace/CucummberProject/src/test/resources/Features/DataTable.feature","feature":{"location":{"line":1,"column":1},"language":"en","keyword":"Feature","name":"Test the login funcationality of OrangeHRM using DataTable","children":[{"scenario":{"location":{"line":3,"column":1},"keyword":"Scenario Outline","name":"Test the valid login","steps":[{"location":{"line":10,"column":1},"keyword":"Given ","text":"user is on login page using DataTable","id":"662bc183-666e-4b5c-bced-f5bb78d1b335"},{"location":{"line":11,"column":1},"keyword":"When ","text":"user enters  credentails using DataTable","dataTable":{"location":{"line":12,"column":1},"rows":[{"location":{"line":12,"column":1},"cells":[{"location":{"line":12,"column":2},"value":"sachin yadav"},{"location":{"line":12,"column":15},"value":"Papa@1234"}],"id":"979851f5-4a1a-45a5-b59a-1ec2a8aec266"}]},"id":"bceca860-1cb9-4bb6-bc26-165ed8972f30"},{"location":{"line":13,"column":1},"keyword":"And ","text":"click on login buttom","id":"06047d32-b494-48dc-b931-cdf7bbdc9c13"},{"location":{"line":14,"column":1},"keyword":"Then ","text":"user should land on home page","id":"722b4edc-e5bc-4796-b25a-d2d1b35f3dc7"}],"id":"9189b4c1-2404-4cde-a574-ee54113767f9"}}]},"comments":[{"location":{"line":5,"column":1},"text":"#Given user is on login page"},{"location":{"line":6,"column":1},"text":"#When user enters  \"sachin yadav\"  and \"Papa@1234\""},{"location":{"line":7,"column":1},"text":"#And click on login buttom"},{"location":{"line":8,"column":1},"text":"#Then user should land on home page"}]}},{"pickle":{"id":"4a5cc8e1-03f2-4e32-9ca7-7e65819acb87","uri":"file:///C:/Users/Yadav/eclipse-workspace/CucummberProject/src/test/resources/Features/DataTable.feature","name":"Test the valid login","language":"en","steps":[{"text":"user is on login page using DataTable","id":"d5a97ca3-d720-4300-9b41-10d068d15108","astNodeIds":["662bc183-666e-4b5c-bced-f5bb78d1b335"]},{"text":"user enters  credentails using DataTable","argument":{"dataTable":{"rows":[{"cells":[{"value":"sachin yadav"},{"value":"Papa@1234"}]}]}},"id":"e90d61e6-0fca-4a00-8da1-52455bd286ab","astNodeIds":["bceca860-1cb9-4bb6-bc26-165ed8972f30"]},{"text":"click on login buttom","id":"70289ad1-1479-4505-a88f-90c8afad2706","astNodeIds":["06047d32-b494-48dc-b931-cdf7bbdc9c13"]},{"text":"user should land on home page","id":"bea0c70d-08b4-4288-a7e7-731f76b9f61b","astNodeIds":["722b4edc-e5bc-4796-b25a-d2d1b35f3dc7"]}],"astNodeIds":["9189b4c1-2404-4cde-a574-ee54113767f9"]}},{"source":{"uri":"file:///C:/Users/Yadav/eclipse-workspace/CucummberProject/src/test/resources/Features/LoginFeature.feature","data":"Feature: Test the login funcationality of OrangeHRM\r\n\r\nScenario Outline: Test the valid login\r\n\r\n#Given user is on login page\r\n#When user enters  \"sachin yadav\"  and \"Papa@1234\"\r\n#And click on login buttom\r\n#Then user should land on home page\r\n\r\nGiven user is on login page\r\nWhen user enters  \u003cusername\u003e  and \u003cpassword\u003e\r\nAnd click on login buttom\r\nThen user should land on home page\r\n\r\nExamples:\r\n|username|password|\r\n|sachin yadav|P|\r\n|sachin yadav|Papa@123|","mediaType":"text/x.cucumber.gherkin+plain"}},{"gherkinDocument":{"uri":"file:///C:/Users/Yadav/eclipse-workspace/CucummberProject/src/test/resources/Features/LoginFeature.feature","feature":{"location":{"line":1,"column":1},"language":"en","keyword":"Feature","name":"Test the login funcationality of OrangeHRM","children":[{"scenario":{"location":{"line":3,"column":1},"keyword":"Scenario Outline","name":"Test the valid login","steps":[{"location":{"line":10,"column":1},"keyword":"Given ","text":"user is on login page","id":"faa5d681-706f-48cb-b1d2-bb045a0d3bef"},{"location":{"line":11,"column":1},"keyword":"When ","text":"user enters  \u003cusername\u003e  and \u003cpassword\u003e","id":"758a3a0f-1b87-4922-9f66-9d5baff3b134"},{"location":{"line":12,"column":1},"keyword":"And ","text":"click on login buttom","id":"a942e474-2919-4d29-830e-2b9fa658ee77"},{"location":{"line":13,"column":1},"keyword":"Then ","text":"user should land on home page","id":"3cc1529a-b33c-467c-9939-4cd54010a666"}],"examples":[{"location":{"line":15,"column":1},"keyword":"Examples","tableHeader":{"location":{"line":16,"column":1},"cells":[{"location":{"line":16,"column":2},"value":"username"},{"location":{"line":16,"column":11},"value":"password"}],"id":"06fe2721-d6d1-4605-8d40-0e85fc75c31a"},"tableBody":[{"location":{"line":17,"column":1},"cells":[{"location":{"line":17,"column":2},"value":"sachin yadav"},{"location":{"line":17,"column":15},"value":"P"}],"id":"ec04555d-c8f8-47ba-98ae-1832864cd0e9"},{"location":{"line":18,"column":1},"cells":[{"location":{"line":18,"column":2},"value":"sachin yadav"},{"location":{"line":18,"column":15},"value":"Papa@123"}],"id":"45c466f1-9d7e-4e4e-b6c0-bc8bef49915e"}],"id":"4cf3655d-847a-47d4-9276-230090de99f1"}],"id":"cf6b75ae-8a0c-4a9b-9c03-695efc1b723f"}}]},"comments":[{"location":{"line":5,"column":1},"text":"#Given user is on login page"},{"location":{"line":6,"column":1},"text":"#When user enters  \"sachin yadav\"  and \"Papa@1234\""},{"location":{"line":7,"column":1},"text":"#And click on login buttom"},{"location":{"line":8,"column":1},"text":"#Then user should land on home page"}]}},{"pickle":{"id":"0eeeb6d2-77dc-430f-9100-4ee2e81d98a9","uri":"file:///C:/Users/Yadav/eclipse-workspace/CucummberProject/src/test/resources/Features/LoginFeature.feature","name":"Test the valid login","language":"en","steps":[{"text":"user is on login page","id":"300bed78-ec06-417d-8503-00fe2d095d8c","astNodeIds":["faa5d681-706f-48cb-b1d2-bb045a0d3bef","ec04555d-c8f8-47ba-98ae-1832864cd0e9"]},{"text":"user enters  sachin yadav  and P","id":"007a6018-5a6d-42bb-9d30-5194f39dde8a","astNodeIds":["758a3a0f-1b87-4922-9f66-9d5baff3b134","ec04555d-c8f8-47ba-98ae-1832864cd0e9"]},{"text":"click on login buttom","id":"d381b269-77d4-4552-a4de-8f666a83335d","astNodeIds":["a942e474-2919-4d29-830e-2b9fa658ee77","ec04555d-c8f8-47ba-98ae-1832864cd0e9"]},{"text":"user should land on home page","id":"77f004c5-5513-432f-a0b8-059509ffceb5","astNodeIds":["3cc1529a-b33c-467c-9939-4cd54010a666","ec04555d-c8f8-47ba-98ae-1832864cd0e9"]}],"astNodeIds":["cf6b75ae-8a0c-4a9b-9c03-695efc1b723f","ec04555d-c8f8-47ba-98ae-1832864cd0e9"]}},{"pickle":{"id":"24478ff4-e451-4037-9718-fa87c78e4041","uri":"file:///C:/Users/Yadav/eclipse-workspace/CucummberProject/src/test/resources/Features/LoginFeature.feature","name":"Test the valid login","language":"en","steps":[{"text":"user is on login page","id":"897f14ed-dd14-4459-a950-f29b7c347d7f","astNodeIds":["faa5d681-706f-48cb-b1d2-bb045a0d3bef","45c466f1-9d7e-4e4e-b6c0-bc8bef49915e"]},{"text":"user enters  sachin yadav  and Papa@123","id":"5aae7c3f-1e53-4a51-a9ff-f909e2578b9c","astNodeIds":["758a3a0f-1b87-4922-9f66-9d5baff3b134","45c466f1-9d7e-4e4e-b6c0-bc8bef49915e"]},{"text":"click on login buttom","id":"92e31e1a-44fd-41c5-82f7-659162bd4ee8","astNodeIds":["a942e474-2919-4d29-830e-2b9fa658ee77","45c466f1-9d7e-4e4e-b6c0-bc8bef49915e"]},{"text":"user should land on home page","id":"6da1cc6f-0ab9-4dfa-9c82-457de3251e25","astNodeIds":["3cc1529a-b33c-467c-9939-4cd54010a666","45c466f1-9d7e-4e4e-b6c0-bc8bef49915e"]}],"astNodeIds":["cf6b75ae-8a0c-4a9b-9c03-695efc1b723f","45c466f1-9d7e-4e4e-b6c0-bc8bef49915e"]}},{"stepDefinition":{"id":"13e0df9a-6a43-49ec-a139-1c97f95f4482","pattern":{"source":"click on login buttom"},"sourceReference":{"javaMethod":{"className":"com.stepDefinations.LoginStep","methodName":"click_on_login_buttom"}}}},{"stepDefinition":{"id":"66fc50fa-a1ec-47b4-9c87-c71c7254369d","pattern":{"source":"user should land on home page"},"sourceReference":{"javaMethod":{"className":"com.stepDefinations.LoginStep","methodName":"user_should_land_on_home_page"}}}},{"stepDefinition":{"id":"36259d9e-cfb2-4844-b736-757f6f953ebf","pattern":{"source":"user is on login page"},"sourceReference":{"javaMethod":{"className":"com.stepDefinations.LoginStep","methodName":"user_is_on_login_page"}}}},{"stepDefinition":{"id":"fc33cf46-64e0-4c17-8c6f-844105ce0d52","pattern":{"source":"user enters  (.*)  and (.*)$","type":"REGULAR_EXPRESSION"},"sourceReference":{"javaMethod":{"className":"com.stepDefinations.LoginStep","methodName":"user_enters_username_and_password","methodParameterTypes":["java.lang.String","java.lang.String"]}}}},{"testCase":{"id
